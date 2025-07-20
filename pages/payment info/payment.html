@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/payment.css">
+    <link rel="stylesheet" href="../../css/order.css">
+    <link rel="stylesheet" href="../../css/home2.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="../../img/Vector.png" alt="">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Movie</a></li>
+            <li><a href="#">Buy Ticket</a></li>
+        </ul>
+        <div class="nav-buttons">
+            <button class="signin-btn">SignIn</button>
+            <button class="signup-btn">Sign Up</button>
+        </div>
+    </nav>
+    <div class="order-container">
+         <div class="step-container">
+    <div class="step active">
+        <div class="circle"><img src="../../img/check.png" alt=""></div>
+        <p>Dates And Time</p>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="step active">
+        <div class="circle"><img src="../../img/check.png" alt=""></div>
+        <p>Seat</p>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="step next">
+        <div class="circle">3</div>
+        <p>Done</p>
+    </div>
+</div>
+        <div class="section">
+            <h2>Payment Info</h2>
+            <br>
+            <h4>DATE & TIME</h4>
+            <p>Tuesday, 07 July 2020 at 02:00pm</p>
+            <hr>
+            <h4>MOVIE TITLE</h4>
+            <p>Spider-Man: Homecoming</p>
+            <hr>
+            <h4>CINEMA NAME</h4>
+            <p>CineOne21 Cinema</p>
+            <hr>
+            <h4>NUMBER OF TICKETS</h4>
+            <p>3 pieces</p>
+            <hr>
+            <h4>TOTAL PAYMENT</h4>
+            <p style="color:#1D4ED8;">$30,00</p>
+            <hr>
+            <br>
+            <h2>Personal Information</h4>
+            <label class="label">Full Name</label>
+            <div class="search-input-wrapper">
+            <input type="text" class="search-input" placeholder="Jonas El Rodriguez" id="searchInput">
+            </div>
+            <label class="label">Email</label>
+            <div class="search-input-wrapper">
+            <input type="text" class="search-input" placeholder="jonasrodri123@gmail.com" id="searchInput">
+            </div>
+            <div class="form-group">
+            <label class="form-label" for="phone">Phone Number</label>
+            <div class="phone-input-container">
+                <div class="country-code">+62</div>
+                <input type="tel" id="phone" class="phone-input" value="81445687121" placeholder="Enter phone number" maxlength="15"  >
+            </div>
+        </div>
+        <h2>Payment Method</h2>
+        <div class="payment-grid">
+            <div class="payment-option"><img src="../../img/icons_google.png" alt=""></div>
+            <div class="payment-option"><img src="../../img/logos_visa.png" alt=""></div>
+            <div class="payment-option"><img src="../../img/Logo GoPay (SVG-240p) - FileVector69 1.png" alt=""></div>
+            <div class="payment-option"><img src="../../img/logos_paypal.png" alt=""></div>
+            <div class="payment-option"><img src="../../img/Logo DANA (PNG-240p) - FileVector69 1.png" alt=""></div>
+            <div class="payment-option"><img src="../../img/Bank BCA Logo (SVG-240p) - FileVector69 1.png" alt=""></div>
+            <div class="payment-option"><img src="../../img/Bank BRI (Bank Rakyat Indonesia) Logo (SVG-240p) - FileVector69 1.png" alt=""></div>
+            <div class="payment-option"><img src="../../img/ovo.png" alt=""></div>
+        </div>
+        <div>
+        <button class="pay-button" id="payButton">Pay your order</button>
+<div class="overlay" id="modalOverlay" style="display:none;">
+    <div class="modal-content">
+        <button class="close-button" id="closeModal">&times;</button>
+
+        <div class="modal-header">
+            <h2>Payment Info</h2>
+        </div>
+
+        <div class="payment-info">
+            <div class="info-row">
+                <span class="info-label">No. Rekening Virtual</span>
+                <div class="virtual-account">
+                    <span class="info-value">1232132891382924</span>
+                    <button class="copy-button">Copy</button>
+                </div>
+            </div>
+
+            <div class="info-row">
+                <span class="info-label">Total Payment</span>
+                <span class="total-amount">$30</span>
+            </div>
+        </div>
+
+        <div class="payment-deadline">
+            Pay this payment bill before it is due, <span class="due-date"> on June 23, 2023</span>. If the bill has not been paid by the specified time, it will be forfeited 
+        </div>
+
+        <div class="modal-buttons">
+            <button class="check-payment-btn">Check Payment</button>
+            <button class="pay-later-btn">Pay Later</button>
+        </div>
+    </div>
+</div>
+        </div>
+ <script>
+    const payButton = document.getElementById('payButton');
+    const modalOverlay = document.getElementById('modalOverlay');
+    const closeButton = document.getElementById('closeModal');
+
+    payButton.addEventListener('click', function() {
+        modalOverlay.style.display = 'flex';
+    });
+
+    closeButton.addEventListener('click', function() {
+        modalOverlay.style.display = 'none';
+    });
+
+    // Klik luar modal menutup modal
+    modalOverlay.addEventListener('click', function(e) {
+        if (e.target === modalOverlay) {
+            modalOverlay.style.display = 'none';
+        }
+    });
+</script>
+
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section logo-section">
+                    <a href="#" class="logo">Tickitz</a>
+                    <p class="logo-description">
+                        Stop waiting in line. Buy tickets conveniently, watch movies quietly.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Explore</h3>
+                    <ul>
+                        <li><a href="#">Cinemas</a></li>
+                        <li><a href="#">Movies List</a></li>
+                        <li><a href="#">My Ticket</a></li>
+                        <li><a href="#">Notification</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section sponsor-section">
+                    <h3>Our Sponsor</h3>
+                    <div class="sponsor-logos">
+                        <img src="../../img/image.png" alt="" width="122px">
+                        <img src="../../img/CineOne21 2.png" alt="" width="174px">
+                        <img src="../../img/hiflix 2.png" alt="" width="80px">
+                    </div>
+                </div>
+
+                <div class="footer-section social-section">
+                    <h3>Follow us</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                            <span>Tickitz Cinema id</span>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                            <span>tickitz.id</span>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                            <span>tickitz.id</span>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-youtube"></i>
+                            <span>Tickitz Cinema id</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2020 Tickitz. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

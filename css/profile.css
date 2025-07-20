@@ -1,0 +1,315 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f8f9fb;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+    padding: 40px;
+}
+
+.sidebar {
+    height: fit-content;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.profile {
+    text-align: center;
+}
+
+.profile img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.loyalty .card {
+    background: linear-gradient(to right, #3b82f6, #6366f1);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px 0;
+    text-align: center;
+}
+
+.loyalty h3 {
+    margin-top: 10px;
+    font-size: 24px;
+}
+
+.progress-text {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 6px;
+    background: #e5e7eb;
+    border-radius: 3px;
+}
+
+.progress {
+    height: 100%;
+    background: #3b82f6;
+    border-radius: 3px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 2px solid #e5e7eb;
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding: 10px 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    color: #6b7280;
+}
+
+.tab.active {
+    color: #111827;
+    border-bottom: 2px solid #3b82f6;
+}
+
+.info-section {
+    margin-bottom: 30px;
+}
+
+.info-section h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #374151;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    flex: 1;
+}
+
+.phone-input {
+    display: flex;
+    flex: 1;
+    gap: 5px;
+}
+
+.phone-input .prefix {
+    width: 50px;
+}
+
+.actions {
+    text-align: right;
+}
+
+.update-btn {
+    padding: 12px 24px;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+.tab-content {
+    display: none;
+    margin-top: 20px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.content-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.form-group input {
+    flex: 1 1 45%;
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+}
+
+.phone-input {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+}
+
+.phone-input input:first-child {
+    width: 60px;
+}
+.order-list {
+            padding: 20px;
+            width: 100%;
+        }
+
+        .order-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .order-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .order-header {
+            display: flex;
+            justify-content: between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+        }
+
+        .order-info {
+            flex: 1;
+        }
+
+        .order-date {
+            color: #64748b;
+            font-size: 12px;
+            margin-bottom: 8px;
+            font-weight: 400;
+        }
+
+        .order-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 16px;
+            line-height: 1.4;
+        }
+
+        .cinema-logo {
+            font-size: 16px;
+            font-weight: 700;
+            margin-left: 20px;
+        }
+
+        .cinema-logo.cineone21 {
+            color: #3b82f6;
+        }
+
+        .cinema-logo.ebv {
+            color: #1f2937;
+            font-style: italic;
+        }
+
+        /* Status Badges */
+        .status-container {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .status-badge {
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .status-active {
+            background-color: #d1fae5;
+            color: #065f46;
+            border: 1px solid #a7f3d0;
+        }
+
+        .status-not-paid {
+            background-color: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #fca5a5;
+        }
+
+        .status-used {
+            background-color: #e5e7eb;
+            color: #374151;
+            border: 1px solid #d1d5db;
+        }
+
+        .status-paid {
+            background-color: #dbeafe;
+            color: #1e40af;
+            border: 1px solid #93c5fd;
+        }
+
+        /* Show Details */
+        .show-details {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 8px;
+            margin-top: 16px;
+        }
+
+        .show-details-text {
+            color: #64748b;
+            font-size: 13px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .show-details-text:hover {
+            color: #3b82f6;
+        }
+
+        .dropdown-icon {
+            color: #64748b;
+            font-size: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .show-details:hover .dropdown-icon {
+            transform: rotate(180deg);
+        }

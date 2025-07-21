@@ -1,17 +1,17 @@
 .modal-content {
-  background-color: #fefefe;
-  width: 100%;
+    background-color: #fefefe;
+    width: 100%;
 }
+
 .modal-header {
     margin-bottom: 25px;
 }
+
 .payment-deadline {
     font-size: 13px;
-}
-.payment-deadline {
     margin-bottom: 25px;
-    font-size: 13px;
 }
+
 .check-payment-btn {
     background: #1D4ED8;
     color: white;
@@ -23,6 +23,7 @@
     cursor: pointer;
     transition: all 0.2s ease;
 }
+
 .payment-info {
     margin-bottom: 25px;
 }

@@ -1,17 +1,19 @@
 .ticket-details {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2px;
-            margin-bottom: 25px;
-        }
-        .detail-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-bottom: 8px;
-            flex-wrap: wrap;
-        }
-        .qr-code {
-            display: flex;
-            align-items: center;
-        }
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    margin-bottom: 25px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 8px;
+    flex-wrap: wrap;
+}
+
+.qr-code {
+    display: flex;
+    align-items: center;
+}

@@ -7,21 +7,34 @@
     <link rel="stylesheet" href="../../css/global.css">
     <link rel="stylesheet" href="../../css/profile.css">
     <link rel="stylesheet" href="../../css/profile4.css">
+    <script src="/js/main.js" defer></script>
 </head>
 <body style="background-color: #A0A3BD33;">
-    <nav class="navbar">
+   <nav class="navbar">
         <div class="logo">
             <img src="../../img/Vector.png" alt="">
         </div>
-        <ul class="nav-links">
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="/pages/home/home2.html">Movie</a></li>
-            <li><a href="/pages/oder/order.html">Buy Ticket</a></li>
+        <button class="hamburger-btn" onclick="toggleMenu()"><img src="/img/gg_menu-right-alt.png" alt="" srcset=""></button>
+        <div class="nav-menu" id="nav-menu">
+        <ul class="nav-links" id="nav-links">
+            <a href="/index.html">Home</a>
+            <a href="/pages/home/home2.html">Movie</a>
+            <a href="/pages/oder/order.html">Buy Ticket</a>
+        
         </ul>
-        <div class="nav-buttons">
-            <button class="signin-btn">SignIn</button>
-            <button class="signup-btn">Sign Up</button>
+        <div id="userHeader" style="display: none; position: relative;">
+            <img src="" alt="User" id="profileimg" style="width: 40px; border-radius: 50%; cursor: pointer;"/>
+                <div id="dropdown" style="display: none; position: absolute; top: 50px; right: 0; background: #fff; border: 1px solid #ccc; padding: 10px; z-index: 99;">
+                    <button onclick="logout()">Logout</button>
+  </div>
+</div>
+        <div class="nav-buttons" id="authButtons">
+            <button class="signin-btn"><a href="/pages/login/login2.html">SignIn</a></button>
+            <button class="signup-btn"><a href="/pages/login/logn1.html">Sign Up</a></button>
         </div>
+        </div>
+    </div>
+    </div>
     </nav>
    <div class="container">
         <aside class="sidebar">

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../../css/login.css">
+    <script src="/js/login.js" defer></script>
 </head>
 <body>
     <img src="../../img/icon.png" alt="Logo" class="Logo" width="276px" height="104">
@@ -30,12 +31,13 @@
     </div>
 </div>
 
-    <form action="">
+    <form id="formlogin">
         <label for="email">Email</label><br>
         <input type="email" id="email" name="email" placeholder="Enter your email"><br><br>
 
-        <label for="passwd">Password</label><br>
-        <input type="password" id="password" name="passwd" placeholder="Enter your password"><br><br>
+        <label for="password">Password</label><br>
+        <input type="password" id="password" name="passwd" placeholder="Enter your password"><br>
+        <div class="error" id="errormsg"></div>
     <div class="terms-container">
         <input type="checkbox" name="term" id="term"><label for="term">I agree to terms & conditions</label><br><br>
         <button type="submit">Join For Free Now</button>

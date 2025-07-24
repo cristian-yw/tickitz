@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../../css/login.css">
+    <script src="/js/login2.js" defer></script>
 </head>
 <body>
         <img src="../../img/icon.png" alt="Logo" class="Logo" width="276px" height="104">
@@ -12,16 +13,16 @@
     <h3>Welcome Back</h3>
     <p>Sign in with your data that you entered during your registration</p>
 
-    <form action="">
+    <form id="formlogin">
         <label for="email" class="label">Email</label><br>
         <input type="email" id="email" name="email" placeholder="Enter your email"><br><br>
 
         <label for="password">Password</label><br>
         <input type="password" id="password" name="password" placeholder="Enter your password"><br>
+        <div class="error" id="errormsg"></div>
+        <a href="#" class="forgot" >Forgot your password?</a><br>
+        <button type="submit">Login</a></button><br>
     </form>
-    <a href="#" class="forgot" >Forgot your password?</a><br>
-    <button type="submit"><a href="/index.html">Login</a></button><br>
-    <br>
     <p2>Or</p2>
     <div class="social">
     <button class="social-button"><img src="../../img/icons_google.png" alt="" class="social-img">Google</button>

@@ -40,3 +40,24 @@
     localStorage.removeItem("password");
     window.location.href = "/index.html";
   }
+
+
+
+  const payButton = document.getElementById('payButton');
+    const modalOverlay = document.getElementById('modalOverlay');
+    const closeButton = document.getElementById('closeModal');
+
+    payButton.addEventListener('click', function() {
+        modalOverlay.style.display = 'flex';
+    });
+
+    closeButton.addEventListener('click', function() {
+        modalOverlay.style.display = 'none';
+    });
+
+    
+    modalOverlay.addEventListener('click', function(e) {
+        if (e.target === modalOverlay) {
+            modalOverlay.style.display = 'none';
+        }
+    });

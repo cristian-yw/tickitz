@@ -93,6 +93,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
+    text-decoration: none;
 }
 
 .signup-btn {
@@ -103,8 +104,11 @@ body {
     border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
+    text-decoration: none;
 }
-
+button{
+    text-decoration: none;
+}
 .signin-btn:hover {
     background-color: #e6ecff;
 }
@@ -141,22 +145,64 @@ body {
     color: #666;
     font-size: 14px;
 }
+@media (max-width: 768px) {
+    .hero-left{
+        
+    }
+}
 
 .hero-right {
     flex: 1;
 }
 
-.grid-images {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+.movies-grid {
+  min-width: 460px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "a b"
+    "c b"
+    "c d";
+
+  column-gap: 13px;
+  row-gap: 16px;
 }
 
-.grid-images img {
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-    object-fit: cover;
+.movies-grid > div:nth-child(1) {
+  background-image: url("/img/Rectangle\ 35.png");
+  background-size: cover;
+  background-position: center;
+  height: 170px;
+  grid-area: a;
+  border-radius: 18px 18px 0 0;
+}
+
+.movies-grid > div:nth-child(2) {
+  background-image: url("/img/Rectangle\ 36.png");
+  background-size: cover;
+  background-position: center;
+
+  grid-area: b;
+  border-radius: 18px 18px 0 0;
+}
+
+.movies-grid > div:nth-child(3) {
+  background-image: url("/img/Rectangle\ 37.png");
+  background-size: cover;
+  background-position: center;
+
+  grid-area: c;
+  border-radius: 0 0 18px 18px;
+}
+
+.movies-grid > div:nth-child(4) {
+  background-image: url("/img/Rectangle\ 38.png");
+  background-size: cover;
+  background-position: center;
+  grid-area: d;
+  border-radius: 0 0 18px 18px;
 }
 
 .why-choose-us {
@@ -286,13 +332,12 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.movies-grid {
+.movies-grids {
     display: grid;
     grid-template-columns: repeat(4, minmax(200px, 1fr));
     gap: 25px;
     margin-top: 20px;
 }
-
 .movie-card {
     background: white;
     border-radius: 16px;

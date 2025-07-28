@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../../css/global.css">
-    <link rel="stylesheet" href="../../css/detail.css">
-    <script src="/js/main.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Movie Detail</title>
+  <link rel="stylesheet" href="../../css/global.css">
+  <link rel="stylesheet" href="../../css/detail.css">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
-        <nav class="navbar">
+<nav class="navbar">
         <div class="logo">
             <img src="../../img/Vector.png" alt="">
         </div>
@@ -35,118 +35,113 @@
     </div>
     </div>
     </nav>
-    <section>
-        <div class="hero-section">
-        <div class="hero-overlay"></div>
-        <div class="hero-content"></div>
+  <section>
+    <div class="hero-section" id="hero-section">
+      <div class="hero-content"></div>
     </div>
 
     <div class="container">
-        <div class="main-content">
-            <div class="movie-poster-section">
-                <div class="movie-poster">
-                    <div class="poster-title">SPIDER-MAN</div>
+      <div class="main-content">
+        <div class="movie-poster-section">
+          <div class="movie-poster">
+            <div class="poster-title" style=" visibility: hidden;">Loading...</div>
+          </div>
+        </div>
+
+        <div class="right-content">
+          <h1 class="movie-title-main">Loading...</h1>
+          <div class="movie-meta-grid">
+            <div class="genre-section"></div>
+            <div class="meta-info">
+              <div class="meta-row">
+                <div class="meta-item">
+                  <span class="meta-label">Release date</span>
+                  <span class="meta-value">Loading...</span>
                 </div>
+                <div class="meta-item">
+                  <span class="meta-label">Directed by</span>
+                  <span class="meta-value">Loading...</span>
+                </div>
+              </div>
+              <div class="meta-row">
+                <div class="meta-item">
+                  <span class="meta-label">Duration</span>
+                  <span class="meta-value">Loading...</span>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-label">Casts</span>
+                  <span class="meta-value">Loading...</span>
+                </div>
+              </div>
             </div>
+          </div>
 
-            <div class="right-content">
-                <h1 class="movie-title-main">Spider-Man: Homecoming</h1>
-                <div class="movie-meta-grid">
-                    <div class="genre-section">
-                        <span class="genre-tag">Action</span>
-                        <span class="genre-tag">Adventure</span>
-                    </div>
-                    <div class="meta-info">
-                        <div class="meta-row">
-                            <div class="meta-item">
-                                <span class="meta-label">Release date</span>
-                                <span class="meta-value">June 28, 2017</span>
-                            </div>
-                            <div class="meta-item">
-                                <span class="meta-label">Directed by</span>
-                                <span class="meta-value">Jon Watts</span>
-                            </div>
-                        </div>
-                        <div class="meta-row">
-                            <div class="meta-item">
-                                <span class="meta-label">Duration</span>
-                                <span class="meta-value">2 hours 13 minutes</span>
-                            </div>
-                            <div class="meta-item">
-                                <span class="meta-label">Casts</span>
-                                <span class="meta-value">Tom Holland, Michael Keaton, Robert Downey Jr</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="synopsis">
-                    <h3>Synopsis</h3>
-                    <p>Thrilled by his experience with the Avengers, young Peter Parker returns home to live with his Aunt May. Under the watchful eye of mentor Tony Stark, Parker starts to embrace his newfound identity as Spider-Man. He also tries to return to his normal daily routine -- distracted by thoughts of proving himself to be more than just a friendly neighborhood superhero. Peter must soon put his powers to the test when the evil Vulture emerges to threaten everything that he holds dear.</p>
-                </div>
+          <div class="synopsis">
+            <h3>Synopsis</h3>
+            <p>Loading...</p>
+          </div>
 
-                <div class="booking-section">
-                    <h2 class="section-title">Book Tickets</h2>
-                    <div class="booking-options">
-                        <div class="booking-option">
-                            <label for="date-select">Choose Date</label>
-                            <select id="date-select" class="booking-select">
-                                <option>07/17/20</option>
-                                <option>07/18/20</option>
-                                <option>07/19/20</option>
-                            </select>
-                        </div>
-                        <div class="booking-option">
-                            <label for="time-select">Choose Time</label>
-                            <select id="time-select" class="booking-select">
-                                <option>08:30 AM</option>
-                                <option>02:00 PM</option>
-                                <option>07:00 PM</option>
-                            </select>
-                        </div>
-                        <div class="booking-option">
-                            <label for="location-select">Choose Location</label>
-                            <select id="location-select" class="booking-select">
-                                <option>Purwokerto</option>
-                                <option>Jakarta</option>
-                                <option>Bandung</option>
-                            </select>
-                        </div>
-                        <div class="booking-option">
-                            <p class="book-button">filter</p>
-                        </div>
-                    </div>
-                </div>
+          <div class="booking-section">
+            <h2 class="section-title">Book Tickets</h2>
+            <div class="booking-options">
+              <div class="booking-option">
+                <label for="date-select">Choose Date</label>
+                <select id="date-select" class="booking-select">
+                  <option>07/17/20</option>
+                  <option>07/18/20</option>
+                  <option>07/19/20</option>
+                </select>
+              </div>
+              <div class="booking-option">
+                <label for="time-select">Choose Time</label>
+                <select id="time-select" class="booking-select">
+                  <option>08:30 AM</option>
+                  <option>02:00 PM</option>
+                  <option>07:00 PM</option>
+                </select>
+              </div>
+              <div class="booking-option">
+                <label for="location-select">Choose Location</label>
+                <select id="location-select" class="booking-select">
+                  <option>Purwokerto</option>
+                  <option>Jakarta</option>
+                  <option>Bandung</option>
+                </select>
+              </div>
+              <div class="booking-option">
+                <p class="book-button">Filter</p>
+              </div>
+            </div>
+          </div>
 
-                <div class="cinema-partners">
-                    <h3>Choose Cinema</h3>
-                    <div class="partners-grid">
-                        <img src="../../img/ebv.id.png" alt="">
-                        <div class="partner-logo hitfix"><img src="../../img/hiflix 3.png" alt="" width="70%"></div>
-                        <div class="partner-logo cineone"><img src="../../img/cinemaone.png" alt=""></div>
-                        <img src="../../img/ebv.id.png" alt="">
-                    </div>
-                    
-                    <div class="pagination">
-                        <div class="page-dot active"></div>
-                        <div class="page-dot"></div>
-                        <div class="page-dot"></div>
-                        <div class="page-dot"></div>
-                    </div>
-                    
-                    <button class="view-more-btn"><a href="/pages/oder/order.html">Book Now</a></button>
-                </div>
+          <div class="cinema-partners">
+            <h3>Choose Cinema</h3>
+            <div class="partners-grid">
+              <img src="../../img/ebv.id.png" alt="">
+              <div class="partner-logo hitfix"><img src="../../img/hiflix 3.png" alt="" width="70%"></div>
+              <div class="partner-logo cineone"><img src="../../img/cinemaone.png" alt=""></div>
+              <img src="../../img/ebv.id.png" alt="">
+            </div>
+            
+            <div class="pagination">
+              <div class="page-dot active"></div>
+              <div class="page-dot"></div>
+              <div class="page-dot"></div>
+              <div class="page-dot"></div>
+            </div>
+            
+            <button id="book-now-btn" class="view-more-btn">Book Now</button>
+          </div>
 
-<footer class="footer">
+         <footer class="footer">
         <div class="footer-container">
             <div class="footer-content">
-
                 <div class="footer-section logo-section">
                     <a href="#" class="logo">Tickitz</a>
                     <p class="logo-description">
                         Stop waiting in line. Buy tickets conveniently, watch movies quietly.
                     </p>
                 </div>
-
 
                 <div class="footer-section">
                     <h3>Explore</h3>
@@ -195,9 +190,65 @@
             </div>
         </div>
     </footer>
-            </div>
         </div>
+      </div>
     </div>
-    </section> -->
+  </section>
+
+  <script>
+    const API_KEY = 'ed78f89fe600b81ba90ece621fa65990';
+    const BASE_URL = 'https://api.themoviedb.org/3';
+    const IMG_BASE = 'https://image.tmdb.org/t/p/w500';
+
+    function getMovieIdFromURL() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get('id');
+    }
+
+    async function loadMovieDetails(id) {
+      try {
+        const res = await axios.get(`${BASE_URL}/movie/${id}?api_key=${API_KEY}&append_to_response=credits`);
+        const movie = res.data;
+
+        const hero = document.getElementById('hero-section');
+        hero.style.backgroundImage = `url(${IMG_BASE}${movie.backdrop_path})`;
+        hero.style.backgroundSize = 'cover';
+        hero.style.backgroundPosition = 'center';
+
+        document.querySelector('.poster-title').textContent = movie.title;
+        document.querySelector('.movie-title-main').textContent = movie.title;
+        document.querySelector('.movie-poster').style.backgroundImage = `url(${IMG_BASE}${movie.poster_path})`;
+
+        const genreSection = document.querySelector('.genre-section');
+        genreSection.innerHTML = movie.genres.map(g => `
+          <span class="genre-tag">${g.name}</span>
+        `).join('');
+
+        document.querySelectorAll('.meta-value')[0].textContent = new Date(movie.release_date).toDateString();
+
+        const director = movie.credits.crew.find(c => c.job === 'Director');
+        document.querySelectorAll('.meta-value')[1].textContent = director ? director.name : 'Unknown';
+
+        document.querySelectorAll('.meta-value')[2].textContent = `${Math.floor(movie.runtime / 60)} hours ${movie.runtime % 60} minutes`;
+
+        const actors = movie.credits.cast.slice(0, 3).map(actor => actor.name).join(', ');
+        document.querySelectorAll('.meta-value')[3].textContent = actors;
+
+        document.querySelector('.synopsis p').textContent = movie.overview;
+
+        document.getElementById('book-now-btn').onclick = () => {
+          window.location.href = `/pages/oder/order.html?id=${movie.id}`;
+        };
+
+      } catch (err) {
+        console.error('Gagal memuat detail film:', err);
+      }
+    }
+
+    const movieId = getMovieIdFromURL();
+    if (movieId) {
+      loadMovieDetails(movieId);
+    }
+  </script>
 </body>
 </html>

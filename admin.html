@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/global.css" />
+    <script src="/js/main.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#A0A3BD]/20">
+    <nav class="bg-white shadow w-full">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    
+    <div class="logo">
+      <img src="../../img/Vector.png" alt="Logo" class="h-8" />
+    </div>
+
+    <button class="md:hidden" onclick="toggleMenu()">
+      <img src="/img/gg_menu-right-alt.png" alt="Menu" class="w-6 h-6" />
+    </button>
+
+    <div id="nav-menu" class="hidden md:flex flex-col md:flex-row md:items-center gap-6 absolute md:static top-16 left-0 w-full md:w-auto bg-white md:bg-transparent px-6 py-4 md:p-0 shadow md:shadow-none z-50">
+      
+      <ul class="flex flex-col md:flex-row gap-4 md:gap-6">
+        <li><a href="/index.html" class="text-gray-700 hover:text-blue-600">Home</a></li>
+        <li><a href="/pages/home/home2.html" class="text-gray-700 hover:text-blue-600">Movie</a></li>
+        <li><a href="/pages/oder/order.html" class="text-gray-700 hover:text-blue-600">Buy Ticket</a></li>
+      </ul>
+      <div class="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-2 mt-4 md:mt-0">
+        <div id="userHeader" class="hidden relative">
+          <img id="profileimg" src="" alt="User" class="w-10 rounded-full cursor-pointer" />
+          <div id="dropdown" class="hidden absolute top-[50px] right-0 bg-white border border-gray-300 p-2 z-[99]">
+            <button onclick="logout()">Logout</button>
+          </div>
+        </div>
+        <div id="authButtons" class="flex gap-2">
+          <button class="text-blue-600 border border-blue-600 px-4 py-1 rounded hover:bg-blue-600 hover:text-white transition"><a href="/pages/login/login2.html">Sign In</a></button>
+          <button class="bg-blue-600 text-white px-4 py-1 rounded hover:bg-blue-700 transition"><a href="/pages/login/logn1.html">Sign Up</a></button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</nav>
+<aside class="bg-white m-10 p-8 rounded-lg shadow">
+  <h1 class="text-[24px] font-bold mb-4">Sales Chart</h1>
+
+  <div class="flex flex-col gap-2 w-full md:block">
+    <select id="movieSelect" class="w-full md:w-[227px] lg:w-1/3 mb-3 p-2 bg-gray-100 border rounded">
+      <option value="none">Movies Name</option>
+      <option value="avengers">Avengers: End Game</option>
+      <option value="black_window">Black Window</option>
+      <option value="the_witches">The Witches</option>
+    </select>
+
+    <select id="filterSelect" class="w-full md:w-[165px] mb-3 p-2 bg-gray-100 border rounded">
+      <option value="weekly">Weekly</option>
+      <option value="monthly">Monthly</option>
+    </select>
+
+  <button id="filterBtn" class="w-full md:w-[120px] bg-blue-600 text-white py-2 rounded mb-6 hover:bg-blue-700 transition">
+    Filter
+  </button>
+  </div>
+
+  <canvas id="salesChart" height="200"></canvas>
+</aside>
+<aside class="bg-white m-10 p-8 rounded-lg shadow">
+      <h1 class="text-[24px] font-bold mb-4">Ticket Sales</h1>
+
+    <select id="movieSelect2" class="w-full md:w-[227px] lg:w-1/3 mb-3 p-2 bg-gray-100 border rounded">
+      <option value="none">Category</option>
+      <option value="avengers">Avengers: End Game</option>
+      <option value="black_window">Black Window</option>
+      <option value="the_witches">The Witches</option>
+    </select>
+
+    <select id="filterSelect2" class="w-full md:w-[165px] mb-3 p-2 bg-gray-100 border rounded">
+      <option value="weekly">Weekly</option>
+      <option value="monthly">Monthly</option>
+    </select>
+
+    <button id="filterBtn2" class="w-full md:w-[120px] bg-blue-600 text-white py-2 rounded mb-6 hover:bg-blue-700 transition">Filter</button>
+
+    <canvas id="salesChart2" height="200"></canvas>
+  </div>
+</aside>
+  <script>
+    const ctx = document.getElementById('salesChart').getContext('2d');
+    const ctxx = document.getElementById('salesChart2').getContext('2d');
+
+    const chartData = {
+      avengers: {
+        weekly: [300, 350, 600, 400, 500, 680],
+        monthly: [1200, 1400, 1800, 1000, 1100, 1670]
+      },
+      black_window: {
+        weekly: [200, 300, 450, 380, 220,550],
+        monthly: [900, 1100, 1500, 800, 900, 1234]
+      },
+      the_witches: {
+        weekly: [100, 400, 950, 280, 720,350],
+        monthly: [690, 1080, 1300, 900, 600, 1434]
+      }
+    };
+
+    const moviesname = {
+      avengers: 'Avengers: End Game',
+      black_window: 'Black Window',
+      the_witches: 'The Witches'
+    }
+    const chartLabels = ['Jan', 'Feb', 'Mar', 'Apr','May','Jun'];
+
+    const chartConfig = {
+      type: 'line',
+      data: {
+        labels: chartLabels,
+        datasets: [{
+          label: 'Avengers: End Game',
+          data: chartData.avengers.weekly,
+          backgroundColor: 'rgba(54, 162, 235, 0.2)',
+          borderColor: 'rgba(54, 162, 235, 1)',
+          borderWidth: 2,
+          tension: 0.4,
+          fill: true,
+          pointBackgroundColor: 'skyblue',
+          pointRadius: 6
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: true },
+          tooltip: {
+            callbacks: {
+              label: (context) => `${context.parsed.y}`
+            }
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: {
+              callback: value => `$${value}`
+            }
+          }
+        }
+      }
+    };
+
+    const salesChart = new Chart(ctx, chartConfig);
+    const salesChart2 = new Chart(ctxx, chartConfig);
+
+  document.getElementById('filterBtn').addEventListener('click', () => {
+  const movie = document.getElementById('movieSelect').value;
+  const time = document.getElementById('filterSelect').value;
+    
+  chartConfig.data.datasets[0].data = chartData[movie][time];
+  chartConfig.data.datasets[0].label = moviesname[movie];
+  salesChart.update();
+  })
+   
+  document.getElementById('filterBtn2').addEventListener('click', () => {
+  const movie = document.getElementById('movieSelect2').value;
+  const time = document.getElementById('filterSelect2').value;
+    
+  chartConfig.data.datasets[0].data = chartData[movie][time];
+  chartConfig.data.datasets[0].label = moviesname[movie];
+  salesChart2.update();
+  })
+  </script>
+</body>
+</html>

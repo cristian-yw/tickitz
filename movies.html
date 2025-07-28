@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/global.css">
+     <link rel="stylesheet" href="../../css/home2.css">
+     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+     <script src="https://cdn.tailwindcss.com"></script>
+     <script src="/js/api.js"></script>
+
+</head>
+<body>
+<nav class="navbar">
+        <div class="logo">
+            <img src="../../img/Vector.png" alt="">
+        </div>
+        <button class="hamburger-btn" onclick="toggleMenu()"><img src="/img/gg_menu-right-alt.png" alt="" srcset=""></button>
+        <div class="nav-menu" id="nav-menu">
+        <ul class="nav-links" id="nav-links">
+            <a href="/index.html">Home</a>
+            <a href="/pages/home/home2.html">Movie</a>
+            <a href="/pages/oder/order.html">Buy Ticket</a>
+        
+        </ul>
+        <div id="userHeader" style="display: none; position: relative;">
+            <img src="" alt="User" id="profileimg" style="width: 40px; border-radius: 50%; cursor: pointer;"/>
+                <div id="dropdown" style="display: none; position: absolute; top: 50px; right: 0; background: #fff; border: 1px solid #ccc; padding: 10px; z-index: 99;">
+                    <button onclick="logout()">Logout</button>
+  </div>
+</div>
+        <div class="nav-buttons" id="authButtons">
+            <button class="signin-btn"><a href="/pages/login/login2.html">SignIn</a></button>
+            <button class="signup-btn"><a href="/pages/login/logn1.html">Sign Up</a></button>
+        </div>
+        </div>
+    </div>
+    </div>
+    </nav>
+    <section class="hero-section">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        
+        <div class="hero-content">
+            <div class="hero-label">List Movie of the Week</div>
+            <h1 class="hero-title">Experience the Magic of Cinema: Book Your Tickets Today</h1>
+            <a href="/pages/detail/detail.html" class="hero-cta">Book Now</a>
+        </div>
+        
+        <div class="hero-pagination">
+            <div class="pagination-dot active"></div>
+            <div class="pagination-dot"></div>
+            <div class="pagination-dot"></div>
+            <div class="pagination-dot"></div>
+        </div>
+    </section>
+    <section>
+        <div class="search-filter-container">
+        <div class="search-filter-wrapper">
+            <div class="search-section">
+                <label class="search-label">Cari Event</label>
+                <div class="search-input-wrapper">
+                    <i class="fas fa-search search-icon" src><img src="../../img/Search.png" alt=""></i>
+                    <input 
+                        type="text" 
+                        class="search-input" 
+                        placeholder="New Born Expert"
+                        id="searchInput"
+                    >
+                </div>
+            </div>
+            <div class="filter-section">
+                <label class="filter-label">Filter</label>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="thriller">Thriller</button>
+                    <button class="filter-btn" data-filter="horror">Horror</button>
+                    <button class="filter-btn" data-filter="romantic">Romantic</button>
+                    <button class="filter-btn" data-filter="adventure">Adventure</button>
+                    <button class="filter-btn" data-filter="sci-fi">Sci-Fi</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    <section>
+        
+    <section>
+        <div id="movie-list" class="grid grid-cols-2 md:grid-cols-4 gap-4 p-4"></div>
+    </section>
+    <section>
+        <div class="pagination">
+        <a href="#" class="page active">1</a>
+        <a href="#" class="page">2</a>
+        <a href="#" class="page">3</a>
+        <a href="#" class="page">4</a>
+        <a href="#" class="page next">&#8594;</a>
+    </div>
+    </section>
+    <section>
+    <div class="newsletter-container">
+        <div class="decorative-shape"></div>
+        
+        <div class="content">
+            <h2 class="title">Subscribe to our newsletter</h2>
+            
+            <form class="form-container">
+                <div class="input-group">
+                    <input type="email" class="input-field" placeholder="Enter your email" required>
+                </div>
+                
+                <div class="input-group">
+                    <input type="text" class="input-field" placeholder="Your name" required>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    Subscribe Now
+                </button>
+            </form>
+        </div>
+    </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section logo-section">
+                    <a href="#" class="logo">Tickitz</a>
+                    <p class="logo-description">
+                        Stop waiting in line. Buy tickets conveniently, watch movies quietly.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Explore</h3>
+                    <ul>
+                        <li><a href="#">Cinemas</a></li>
+                        <li><a href="#">Movies List</a></li>
+                        <li><a href="#">My Ticket</a></li>
+                        <li><a href="#">Notification</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section sponsor-section">
+                    <h3>Our Sponsor</h3>
+                    <div class="sponsor-logos">
+                        <img src="../../img/image.png" alt="" width="122px">
+                        <img src="../../img/CineOne21 2.png" alt="" width="174px">
+                        <img src="../../img/hiflix 2.png" alt="" width="80px">
+                    </div>
+                </div>
+
+                <div class="footer-section social-section">
+                    <h3>Follow us</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                            <span>Tickitz Cinema id</span>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                            <span>tickitz.id</span>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                            <span>tickitz.id</span>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-youtube"></i>
+                            <span>Tickitz Cinema id</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2020 Tickitz. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+</script>
+</body>
+</html>
